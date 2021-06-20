@@ -3,10 +3,7 @@ package com.sahan.appone.controller;
 import com.sahan.appone.model.Car;
 import com.sahan.appone.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -33,6 +30,13 @@ public class CarController {
             errorMessage.put("ERROR", "INVALID CAR ID");
             return errorMessage;
         }
+    }
+
+    @PostMapping
+    public int addCar(@RequestBody Car car){
+
+        return carService.addCar(car);
+
     }
 
 

@@ -34,4 +34,18 @@ public class CarService {
         }
     }
 
+    /**
+     * Adding a car
+     * @param car
+     * @return
+     */
+    public int addCar(Car car){
+        if(car != null) {
+            carRepository.save(car);
+            return 1;
+        } else {
+           return -1;
+        }
+    }
+
 }
